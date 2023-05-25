@@ -1,40 +1,24 @@
 <script>
+	import { enhance } from '$app/forms';
 	import Button from '$lib/ui/Button.svelte';
+	import TextInput from '$lib/ui/input/TextInput.svelte';
 </script>
 
 <div class="flex h-screen">
 	<div class="m-auto">
-		<div class="flex w-[20rem] flex-col gap-6 p-4">
+		<form method="POST" use:enhance class="flex w-[20rem] flex-col gap-6 p-4">
 			<div class="text-lg">
 				Welcome to <span class="font-bold underline decoration-indigo-600">Plutus.</span>
 			</div>
-			<div>
-				<label for="username" class="block text-sm font-medium">Username</label>
-				<input
-					type="text"
-					name="username"
-					id="username"
-					class="mt-1 block w-full rounded bg-zinc-900 p-2 text-sm outline-none placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-indigo-500"
-					placeholder="Username"
-				/>
-			</div>
-			<div>
-				<label for="username" class="block text-sm font-medium">Password</label>
-				<input
-					type="password"
-					name="password"
-					id="username"
-					class="mt-1 block w-full rounded bg-zinc-900 p-2 text-sm outline-none placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-indigo-500"
-					placeholder="Password"
-				/>
-			</div>
+			<TextInput name="username" placeholder="Enter Username" label="Username" />
+			<TextInput name="password" placeholder="Enter Password" label="Password" type="password" />
 			<Button>Continue</Button>
 			<p class="text-sm">
 				Don`t have an account? <a href="/register" class="font-semibold text-indigo-500 underline"
 					>Register</a
 				>
 			</p>
-		</div>
+		</form>
 	</div>
 </div>
 

@@ -14,6 +14,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@lucia-auth/adapter-prisma": "^2.0.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
@@ -23,6 +24,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
+		"lucia-auth": "^1.7.0",
 		"postcss": "^8.4.23",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.8.1",
@@ -36,5 +38,9 @@
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@prisma/client": "^4.14.1",
+		"@tabler/icons-svelte": "^2.20.0"
+	}
 }

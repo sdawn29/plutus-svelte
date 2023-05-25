@@ -1,35 +1,20 @@
-<script>
-	import Button from '$lib/ui/Button.svelte';
+<script lang="ts">
+	import Header from '$lib/Header.svelte';
+	import { IconCurrencyDollar } from '@tabler/icons-svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
-<div class="flex h-screen">
-	<div class="m-auto">
-		<div class="flex w-[20rem] flex-col gap-6 p-4">
-			<div class="text-lg">
-				Welcome to <span class="font-bold underline decoration-indigo-600">Plutus.</span>
-			</div>
-			<div>
-				<label for="username" class="block text-sm font-medium">Username</label>
-				<input
-					type="text"
-					name="username"
-					id="username"
-					class="mt-1 block w-full rounded bg-zinc-900 p-2 text-sm outline-none placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-indigo-500"
-					placeholder="Username"
-				/>
-			</div>
-			<div>
-				<label for="username" class="block text-sm font-medium">Password</label>
-				<input
-					type="password"
-					name="password"
-					id="username"
-					class="mt-1 block w-full rounded bg-zinc-900 p-2 text-sm outline-none placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-indigo-500"
-					placeholder="Password"
-				/>
-			</div>
-			<Button>Continue</Button>
-		</div>
+<div class="mx-auto my-4 flex w-[600px] flex-col gap-8">
+	<Header {data} />
+	<div class="flex w-full flex-col items-center gap-4 rounded-lg border border-zinc-900 p-8">
+		<div class="font-semibold text-zinc-500">No expense recorded yet.</div>
+		<a
+			href="/add"
+			class="flex flex-row items-center gap-2 rounded bg-indigo-700 px-4 py-2 text-sm font-semibold transition-all hover:bg-indigo-600 active:bg-indigo-700"
+			><IconCurrencyDollar size={16} />Add Expense</a
+		>
 	</div>
 </div>
 
