@@ -29,6 +29,11 @@
 				/>
 			</div>
 			<Button>Continue</Button>
+			<p class="text-sm">
+				Don`t have an account? <a href="/register" class="font-semibold text-indigo-500 underline"
+					>Register</a
+				>
+			</p>
 		</div>
 	</div>
 </div>

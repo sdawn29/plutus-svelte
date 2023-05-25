@@ -28,7 +28,22 @@
 					placeholder="Password"
 				/>
 			</div>
-			<Button>Continue</Button>
+			<div>
+				<label for="username" class="block text-sm font-medium">Confirm Password</label>
+				<input
+					type="password"
+					name="password"
+					id="username"
+					class="mt-1 block w-full rounded bg-zinc-900 p-2 text-sm outline-none placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-indigo-500"
+					placeholder="Confirm Password"
+				/>
+			</div>
+			<Button>Sign Up</Button>
+			<p class="text-sm">
+				Aready have an account? <a href="/login" class="font-semibold text-indigo-500 underline"
+					>Sign in</a
+				>
+			</p>
 		</div>
 	</div>
 </div>
