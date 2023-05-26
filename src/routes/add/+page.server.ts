@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, type Actions } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -7,4 +7,15 @@ export const load: PageServerLoad = async ({ locals }) => {
 	return {
 		user
 	};
+};
+
+export const actions: Actions = {
+	default: async ({ request }) => {
+		const form = await request.formData();
+		const title = form.get('title');
+		const amount = form.get('amount');
+		const category = form.get('category');
+
+		console.log(title, amount, category);
+	}
 };

@@ -1,7 +1,7 @@
 <script>
 	import { enhance } from '$app/forms';
-	import Button from '$lib/ui/Button.svelte';
-	import TextInput from '$lib/ui/input/TextInput.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
+	import TextInput from '$lib/components/ui/input/TextInput.svelte';
 </script>
 
 <div class="flex h-screen">

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
-	import Button from '$lib/ui/Button.svelte';
-	import TextInput from '$lib/ui/input/TextInput.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
+	import TextInput from '$lib/components/ui/input/TextInput.svelte';
 
 	import { IconCircleCheckFilled } from '@tabler/icons-svelte';
 

@@ -1,10 +1,14 @@
 <script lang="ts">
-	import Header from '$lib/Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import { IconCurrencyDollar } from '@tabler/icons-svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
+
+<svelte:head>
+	<title>Plutus</title>
+</svelte:head>
 
 <div class="mx-auto my-4 flex w-[600px] flex-col gap-8">
 	<Header {data} />
@@ -17,10 +21,3 @@
 		>
 	</div>
 </div>
-
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.zinc.950);
-		color: theme(colors.zinc.50);
-	}
-</style>

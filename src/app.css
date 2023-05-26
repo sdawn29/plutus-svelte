@@ -6,4 +6,6 @@
 
 :root {
 	font-family: 'Inter', sans-serif;
+	background-color: theme(colors.zinc.950);
+	color: theme(colors.zinc.50);
 }

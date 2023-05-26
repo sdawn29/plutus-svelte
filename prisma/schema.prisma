@@ -43,3 +43,24 @@ model AuthKey {
   @@index([user_id])
   @@map("auth_key")
 }
+
+model Category {
+  id      String    @id @unique @default(cuid())
+  name    String
+  emoji   String
+  Expense Expense[]
+
+  @@map("categories")
+}
+
+model Expense {
+  id          String   @id @unique @default(cuid())
+  amount      Float
+  description String?
+  category_id String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  category    Category @relation(references: [id], fields: [category_id], onDelete: Cascade)
+
+  @@map("expenses")
+}
