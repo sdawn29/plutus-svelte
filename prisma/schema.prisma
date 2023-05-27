@@ -56,6 +56,7 @@ model Category {
 model Expense {
   id          String   @id @unique @default(cuid())
   amount      Float
+  name        String
   description String?
   category_id String
   created_at  DateTime @default(now())

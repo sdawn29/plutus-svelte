@@ -1,12 +1,23 @@
 import { fail, redirect, type Actions } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { auth } from '$lib/server/lucia';
+import prisma from '$lib/server/prisma';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = await locals.auth.validateUser();
 	if (!user) throw redirect(302, '/login');
+
+	const categories = await prisma.category.findMany();
+	const expenses = await prisma.expense.findMany({
+		include: {
+			category: true
+		}
+	});
+
 	return {
-		user
+		user,
+		categories,
+		expenses
 	};
 };
 

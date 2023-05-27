@@ -29,7 +29,7 @@
 		<a
 			href="/categories"
 			class="default-link"
-			class:active-link={['/categories'].includes($page.url.pathname)}
+			class:active-link={['/categories', '/categories/add'].includes($page.url.pathname)}
 		>
 			<IconCategory size={16} />Category
 		</a>

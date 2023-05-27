@@ -6,37 +6,22 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = await locals.auth.validateUser();
 	if (!user) throw redirect(302, '/login');
 
-	const categories = await prisma.category.findMany();
 	return {
-		user,
-		categories
+		user
 	};
 };
 
 export const actions: Actions = {
-	default: async ({ request }) => {
+	addCategory: async ({ request }) => {
 		const form = await request.formData();
 		const name = form.get('name') as string;
-		const amount = form.get('amount') as string;
-		const category = form.get('category') as string;
+		const emoji = form.get('emoji') as string;
 
-		if (!name || !amount || !category) return redirect(302, '/add');
-
-		await prisma.expense.create({
+		await prisma.category.create({
 			data: {
 				name,
-				amount: Number(amount),
-				category: {
-					connect: {
-						id: category
-					}
-				}
+				emoji
 			}
 		});
-
-		return {
-			success: true,
-			message: 'Expense added successfully'
-		};
 	}
 };
